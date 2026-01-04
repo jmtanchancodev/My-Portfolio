@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <script src="https://unpkg.com/scrollreveal" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Jan Matthew Tanchanco</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#profile">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Jan Matthew Tanchanco</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/NEW_P.jpg" alt="Jan Matthew Tanchanco profile picture" />
+    </div>
+
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Jan Matthew Tanchanco</h1>
+      <p class="section__text__p2">Frontend Developer</p>
+
+      <div class="btn-container">
+        <!-- Download CV = Primary (Blue) -->
+        <button class="btn btn-color-1" onclick="window.open('./assets/Jan Matthew A. Tanchanco.pdf')">
+          Download CV
+        </button>
+
+        <!-- Contact Info = Secondary (Outline) -->
+        <button class="btn btn-color-2" onclick="location.href='#contact'">
+          Contact Info
+        </button>
+      </div>
+
+      <div id="socials-container">
+        <img src="./assets/linkedin.webp" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://www.linkedin.com/in/jan-matthew-tanchanco-a2b13027a/'" />
+        <img src="./assets/github.webp" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/8Matthaeus8'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/profilepic5.webp" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.webp" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p>Frontend Developer <br />Quality Assurance Trainee</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.webp" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <p>
+              Bachelor of Science in Information Technology<br />
+              Specialized in Network Technology<br />
+              Batangas State University<br />2022-2026
+            </p>
+          </div>
+        </div>
+
+        <div class="text-container">
+          <p>
+            I am a passionate and graduated IT professional specializing in Frontend Development. With a Bachelor of
+            Science in Information Technology, I
+            possess a robust foundational knowledge in both client-side and server-side technologies, including HTML,
+            CSS, C++, Dart, and jQuery. My
+            approach to development is rooted in the principles of scalability, security, and clean code. Throughout my
+            academic career and project work,
+            I have gained hands-on experience in the entire software development lifecycle from conceptual design and
+            implementation to rigorous unit testing
+            and final deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="expertise-education-wrapper">
+      <div class="info-column">
+        <h3 class="sub-title-med">My Expertise</h3>
+        <div class="timeline-v2">
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Frontend Developer</h4>
+                <span class="card-date-tag">2022 - Present</span>
+              </div>
+              <p class="card-sub-header">Personal Projects</p>
+              <p class="card-detail-text">Designed and deployed responsive web architectures, establishing a robust
+                technical foundation in modular UI systems and scalable frontend infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Quality Assurance Trainee</h4>
+                <span class="card-date-tag">2023 - Present</span>
+              </div>
+              <p class="card-sub-header">Personal Projects</p>
+              <p class="card-detail-text">Assisted in the software testing lifecycle by executing manual test cases,
+                identifying bugs, and ensuring high-quality product delivery.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Backend Developer</h4>
+                <span class="card-date-tag">2025 - Present</span>
+              </div>
+              <p class="card-sub-header">Personal Projects</p>
+              <p class="card-detail-text">Designed high-fidelity wireframes and interactive prototypes focusing on
+                user-centric accessibility.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Junior Web Developer</h4>
+                <span class="card-date-tag">2023 - 2025</span>
+              </div>
+              <p class="card-sub-header">Tech Start-up Hub</p>
+              <p class="card-detail-text">Acquired a solid technical base in web optimization, focusing on the
+                refinement of existing codebases and the delivery of high-performance experiences for mobile users.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-column">
+        <h3 class="sub-title-med">Education Background</h3>
+        <div class="timeline-v2">
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Information Technology</h4>
+                <span class="card-date-tag">2022 - 2026</span>
+              </div>
+              <p class="card-sub-header">Batangas State University</p>
+              <p class="card-detail-text">Completed a comprehensive program specialized in Network Technology,
+                developing a strong technical base in systems and infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>APJC NetAcad Riders Round 1 Competition</h4>
+                <span class="card-date-tag">March 2025</span>
+              </div>
+              <p class="card-sub-header">Batangas State University</p>
+              <p class="card-detail-text">Competed in a regional Cisco networking challenge, demonstrating proficiency
+                in network configuration and troubleshooting.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>AWS Academy Graduate</h4>
+                <span class="card-date-tag">May 2025</span>
+              </div>
+              <p class="card-sub-header">Online Certification</p>
+              <p class="card-detail-text">Developed a solid understanding of core AWS services, cloud security, and the
+                foundational architecture of cloud computing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-v2-item">
+            <div class="timeline-v2-marker"></div>
+            <div class="timeline-v2-card">
+              <div class="card-header-row">
+                <h4>Introduction to SQL</h4>
+                <span class="card-date-tag">Febuary 2024</span>
+              </div>
+              <p class="card-sub-header">Online Certification</p>
+              <p class="card-detail-text">Gained foundational knowledge in relational database management, focusing on
+                writing efficient queries and data manipulation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-layout">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skills</h1>
+
+    <div class="skills-wrapper">
+      <h2 class="experience-sub-title">Frontend Development</h2>
+      <div class="skills-row">
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/HTML5.webp" alt="HTML" class="skill-icon" />
+            <p class="skill-level">Experienced</p>
+            <h3 class="skill-name">HTML</h3>
+            <span class="skill-percent">95%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/CSS3.webp" alt="CSS" class="skill-icon" />
+            <p class="skill-level">Experienced</p>
+            <h3 class="skill-name">CSS</h3>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/FLUTTER.webp" alt="Flutter" class="skill-icon" />
+            <p class="skill-level">Experienced</p>
+            <h3 class="skill-name">Flutter</h3>
+            <span class="skill-percent">85%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/CPP.webp" alt="C++" class="skill-icon" />
+            <p class="skill-level">Basic</p>
+            <h3 class="skill-name">C++</h3>
+            <span class="skill-percent">60%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/PYTHON.webp" alt="Python" class="skill-icon" />
+            <p class="skill-level">Intermediate</p>
+            <h3 class="skill-name">Python</h3>
+            <span class="skill-percent">70%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/MUI.png" alt="Material UI" class="skill-icon" />
+            <p class="skill-level">Intermediate</p>
+            <h3 class="skill-name">Material UI</h3>
+            <span class="skill-percent">70%</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="experience-sub-title" style="margin-top: 4rem;">Backend Development</h2>
+      <div class="skills-row">
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/SQL.webp" alt="MySQL" class="skill-icon" />
+            <p class="skill-level">Intermediate</p>
+            <h3 class="skill-name">MySQL</h3>
+            <span class="skill-percent">70%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/NODE.png" alt="Node JS" class="skill-icon" />
+            <p class="skill-level">Basic</p>
+            <h3 class="skill-name">Node JS</h3>
+            <span class="skill-percent">60%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/EXPRESS.webp" alt="Express JS" class="skill-icon" />
+            <p class="skill-level">Basic</p>
+            <h3 class="skill-name">Express JS</h3>
+            <span class="skill-percent">60%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/JS.webp" alt="JavaScript" class="skill-icon" />
+            <p class="skill-level">Experienced</p>
+            <h3 class="skill-name">JavaScript</h3>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/GIT.png" alt="Git" class="skill-icon" />
+            <p class="skill-level">Experienced</p>
+            <h3 class="skill-name">Git</h3>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <h2 class="experience-sub-title" style="margin-top: 4rem;">Quality Assurance</h2>
+    <div class="skills-row">
+      <div class="skill-card" style="--percent: 95;">
+        <div class="skill-oval">
+          <img src="./assets/UNIT.webp" alt="Unit Testing" class="skill-icon" />
+          <p class="skill-level">Experienced</p>
+          <h3 class="skill-name">Unit<br /> Testing</h3>
+          <span class="skill-percent">85%</span>
+        </div>
+      </div>
+
+      <div class="skill-card" style="--percent: 95;">
+        <div class="skill-oval">
+          <img src="./assets/E2E.webp" alt="E2E Testing" class="skill-icon" />
+          <p class="skill-level">Intermediate</p>
+          <h3 class="skill-name">E2E<br /> Testing</h3>
+          <span class="skill-percent">75%</span>
+        </div>
+      </div>
+
+      <div class="skill-card" style="--percent: 95;">
+        <div class="skill-oval">
+          <img src="./assets/PERFORMANCE.webp" alt="Performance Testing" class="skill-icon" />
+          <p class="skill-level">Intermediate</p>
+          <h3 class="skill-name">Performance<br /> Testing</h3>
+          <span class="skill-percent">75%</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="section__text__p1" style="margin-top: 6rem;">Learn About My</p>
+    <h1 class="title">Tools</h1>
+
+    <div class="skills-wrapper">
+      <div class="skills-row">
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/GOOGLE.webp" alt="Google Workplace" class="skill-icon" />
+            <h3 class="skill-name">Google<br />Workplace</h3>
+            <span class="skill-percent">95%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/VSCODE.webp" alt="VS Code" class="skill-icon" />
+            <h3 class="skill-name">Visual Studio<br /> Code</h3>
+            <span class="skill-percent">95%</span>
+          </div>
+        </div>
+
+        <div class="skill-card" style="--percent: 95;">
+          <div class="skill-oval">
+            <img src="./assets/github.webp" alt="GitHub Desktop" class="skill-icon" />
+            <h3 class="skill-name">GitHub<br />Desktop</h3>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-layout">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Personal Project</h1>
+
+    <!-- Rescuer Side -->
+    <h3 class="experience-sub-title" style="text-align: center; margin-bottom: 2rem;">Rescuer Side</h3>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/Registration.webp" alt="Project 1" class="project-img"
+              data-full-image="./assets/Registration.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Login</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Login"
+              data-description="Registration (Login)\nThis project showcases the primary user authentication module for the system. It features secure credential input, a password visibility toggle for usability, and a dedicated password recovery flow. Built to serve both Admin and Responder roles, its design adheres strictly to the Data Privacy Act of 2012 principles, guaranteeing the security of personal access data.">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/Home.webp" alt="Project 2" class="project-img" data-full-image="./assets/Home.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Home</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Home"
+              data-description="Home Map View\nThis project developed the Rescuer Home Screen iLocate Map View, which is the primary interface for situational awareness. It features a map displaying the rescuers live location alongside incoming SOS coordinates, ensuring rapid navigation. A prominent Active Rescue Alerts Notification provides a quick overview of incidents, streamlining the process for responders to access detailed Incident Alert Pages instantly.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/alerts.1.webp" alt="Project 3" class="project-img"
+              data-full-image="./assets/alerts.1.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Alerts</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Alerts"
+              data-description="SOS Alerts Dashboard\nThis project involves the Emergency Response Dashboard, the central hub for managing incoming distress signals. Designed for speed, it prominently displays crucial incident details like time and date and provides rescuers with two critical action buttons: View, to instantly generate directions to the SOS location, and Respond, to accept and initiate the rescue effort. The dashboard is quickly accessible via the dedicated Incident Alert button at the bottom of the screen.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/members.1.webp" alt="Project 4" class="project-img"
+              data-full-image="./assets/members.1.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Team</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Team"
+              data-description="The Rescuer Team Member Interface, which presents the name of the assigned rescue team along with a list of its members. This interface is accessible via the Rescue Team Button, located at the bottom of the screen, providing responders with quick access to team composition and coordination details.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/logs.1.webp" alt="Project 5" class="project-img" data-full-image="./assets/logs.1.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Logs</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Logs"
+              data-description="The Rescuer Logs Interface, which displays a comprehensive log of all rescue activities and incidents. This interface is accessible via the Rescue Logs Button, located at the bottom of the screen, providing responders with a detailed history of their operations and performance metrics.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/settings.1.webp" alt="Project 6" class="project-img"
+              data-full-image="./assets/settings.1.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Settings</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Settings"
+              data-description="The Rescuer Settings Interface is a secure hub where users can manage their account credentials and app preferences in one place. It allows for easy contact detail reviews and password updates, while providing quick access to essential legal policies and terms of use. With integrated logout functionality and persistent navigation, the interface ensures users can manage their data and session security with ease.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Admin Side -->
+    <h3 class="experience-sub-title" style="text-align: center; margin-bottom: 2rem; margin-top: 4rem;">Admin Side</h3>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/h.admin.webp" alt="Admin Project 1" class="project-img"
+              data-full-image="./assets/h.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Home</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Home"
+              data-description="The real-time monitoring feature allows administrators to track responder locations via GPS markers on a map interface. Active rescuers are marked in green, inactive ones in yellow, and the rescuee in red. This system enables administrators to track movements, identify coverage gaps, and assign tasks based on proximity to distress calls. By ensuring rescuers are strategically positioned, the tool enhances operational safety and improves the efficiency of disaster response coordination.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/alerts.admin.webp" alt="Admin Project 2" class="project-img"
+              data-full-image="./assets/alerts.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Alerts</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Alerts"
+              data-description="The Admin Alert Dashboard, which allows administrators to manage incoming SOS signals. It includes a View Button that opens the map view along with detailed information about the incident. Additionally, the Assign Button enables the admin to assign the selected incident to a specific rescue team for response')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/assign.admin.webp" alt="Admin Project 3" class="project-img"
+              data-full-image="./assets/assign.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Assign</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Assign"
+              data-description="The Admin Assign Incident Interface, which includes key  elements for assigning a rescue task. The Group Selection Dropdown allows the admin to choose the rescue team to handle the specific incident. The interface also includes a Confirm Button to finalize the assignment and a Cancel Button to abort the action and return to the previous screen.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/team.admin.webp" alt="Admin Project 4" class="project-img"
+              data-full-image="./assets/team.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Team</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Team"
+              data-description="The Admin Team Management Interface, which allows administrators to manage rescue teams. It includes a View Button that opens the team details and a Manage Button to edit or remove team members.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/add.admin.webp" alt="Admin Project 5" class="project-img"
+              data-full-image="./assets/add.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Add Team</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Add Team"
+              data-description="The Admin Add Team Interface, which allows administrators to add new rescue teams. It includes fields for team name and team members, along with a Submit Button to finalize the addition and a Cancel Button to abort the action.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/logs.admin.webp" alt="Admin Project 6" class="project-img"
+              data-full-image="./assets/logs.admin.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Logs</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Logs"
+              data-description="The Incident Monitoring Interface, showing key information for each incident. Each entry provides a real-time status such as In Progress or Resolved for easy tracking. The administrator can quickly locate specific incidents using the Search Bar and Filter Option. Additionally, the Archive button enables administrators to move completed or inactive incidents to the archived list for record-keeping purposes.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <h3 class="experience-sub-title" style="text-align: center; margin-bottom: 2rem; margin-top: 4rem;">Modals</h3>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/login.other.webp" alt="Login Success Modal" class="project-img"
+              data-full-image="./assets/login.other.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Login</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Login"
+              data-description="The Success Dialog serves as an immediate feedback mechanism after a user provides valid credentials. It features a green-themed layout that welcomes the user, confirms their specific role, and ensures they are aware of their successful session start before entering the dashboard.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/status.other.webp" alt="Action Modal" class="project-img"
+              data-full-image="./assets/status.other.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Status</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Status"
+              data-description="The Status Update Dialog is a critical confirmation step used when assigning incidents to a specific rescue group. It includes a cautionary, This action cannot be undone, preventing accidental assignments and ensuring that administrators are certain before deploying resources to a distress location.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/logout.other.webp" alt="System Alert" class="project-img"
+              data-full-image="./assets/logout.other.webp" />
+          </div>
+          <h2 class="experience-sub-title project-title">Logout</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-1 project-btn" onclick="viewFullImage(this)">View</button>
+            <button class="btn btn-color-2 project-btn project-desc-btn" data-title="Logout"
+              data-description="The Logout Confirmation Dialog acts as a security checkpoint to prevent accidental session termination. By requiring the user to confirm their intent to leave, it protects ongoing work and ensures that the user is intentionally ending their access to the sensitive data within the application.')">
+              Description
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="description-overlay" id="descOverlay">
+    <div class="description-container">
+      <span class="close-button" id="descClose">&times;</span>
+      <h3 id="descTitle"></h3>
+      <p id="descText"></p>
+    </div>
+  </div>
+
+
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+
+    <div class="contact-info-upper-container">
+
+      <!-- Gmail Button -->
+      <a class="contact-info-container gmail-btn"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=jmtanchanco.dev@gmail.com" target="_blank" rel="noopener">
+        <img src="./assets/email.webp" alt="Email icon" class="icon contact-icon email-icon" />
+        <span>jmtanchanco.dev@gmail.com</span>
+      </a>
+
+      <!-- LinkedIn Button -->
+      <a class="contact-info-container linkedin-btn" href="https://www.linkedin.com/in/jan-matthew-tanchanco-a2b13027a/"
+        target="_blank" rel="noopener">
+        <img src="./assets/linkedin.webp" alt="LinkedIn icon" class="icon contact-icon" />
+        <span>LinkedIn</span>
+      </a>
+
+    </div>
+
+    <!-- Copyright -->
+    <p class="copyright">
+      Copyright &#169; 2026 Jan Matthew's Portfolio. All Rights Reserved.
+    </p>
+  </section>
+</body>
+
+</html>

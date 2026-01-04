@@ -1,0 +1,456 @@
+/*
+   1400px Below (Large Tablet / Small Laptop)
+*/
+@media screen and (max-width: 1400px) {
+
+  #profile {
+    min-height: calc(100vh - 72px);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-containers {
+    flex-wrap: wrap;
+  }
+
+  .about-details-container,
+  .expertise-education-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+/*
+   1200px Below (Tablet)
+*/
+@media screen and (max-width: 1200px) {
+
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
+
+  #about {
+    padding-top: calc(6rem + 10px);
+    padding-bottom: calc(5rem + 10px);
+  }
+
+  #about .section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-details-container {
+    width: 100%;
+  }
+
+  #about .text-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .expertise-education-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .info-column {
+    width: 100%;
+  }
+
+  .sub-title-med {
+    text-align: center;
+  }
+
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  #profile {
+    min-height: calc(100vh - 72px);
+    padding-top: 2rem;
+  }
+
+  /* Section Layout System */
+  .section-layout {
+    margin: 0;
+    padding: 6rem 5% 5rem;
+    min-height: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .skill-oval {
+    width: 125px;
+    height: calc(160px + (var(--percent) * 0.7px));
+    border-radius: 62.5px;
+  }
+
+  .skills-row {
+    gap: 1.5rem;
+  }
+
+  #projects .experience-details-container .about-containers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #projects .article-container {
+    height: 260px !important;
+  }
+}
+
+/*
+   900px Below (Small Tablet)
+*/
+@media screen and (max-width: 900px) {
+  .timeline-v2-card {
+    padding: 1rem;
+  }
+
+  #contact .contact-info-upper-container {
+    display: inline-flex;
+    flex-direction: column;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: 1rem auto 0;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  #contact .contact-info-container {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+
+    /* allow long email to wrap instead of overflow */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #profile .section__pic-container {
+    width: min(320px, 80vw);
+    height: min(320px, 80vw);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #profile .section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+/*
+   600px Below (Mobile)
+*/
+@media screen and (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --nav-height: 90px;
+  }
+
+  nav,
+  #hamburger-nav {
+    height: var(--nav-height);
+  }
+
+  body {
+    overscroll-behavior: none;
+    padding-top: var(--nav-height);
+  }
+
+  #profile,
+  #about,
+  #contact {
+    scroll-margin-top: var(--nav-height);
+  }
+
+  .section-layout {
+    margin: 0;
+    padding: 6rem 1.25rem 4rem;
+    min-height: auto;
+  }
+
+  #contact,
+  footer {
+    padding-bottom: 2rem;
+  }
+
+  #profile {
+    min-height: calc(100vh - var(--nav-height));
+    padding-top: 2rem;
+  }
+
+  #profile .section__pic-container {
+    width: min(260px, 78vw);
+    height: min(260px, 78vw);
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #profile .section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+
+  #about .section__pic-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-container,
+  .timeline-v2-card,
+  .description-container {
+    border-radius: 1.25rem;
+  }
+
+  /* About: Experience above, Education below */
+  #about .about-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  #about .details-container {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  #about .details-container:nth-child(1) {
+    order: 1;
+  }
+
+  /* Experience */
+  #about .details-container:nth-child(2) {
+    order: 2;
+  }
+
+  /* Projects – Mobile: 1 Per Row */
+  #projects .experience-details-container .about-containers {
+    grid-template-columns: 1fr;
+  }
+
+  #projects .article-container {
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+  }
+
+  .skill-oval {
+    width: 100px;
+    height: calc(130px + (var(--percent) * 0.5px));
+    border-radius: 50px;
+  }
+
+  .skill-icon {
+    height: 30px;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+
+  .skill-level {
+    font-size: 0.7rem;
+  }
+
+  #skills .skill-percent {
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+
+  /* Contact: pill auto-fits Gmail width (no overflow) */
+  #contact .contact-info-upper-container {
+    display: inline-flex;
+    flex-direction: column;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: 1rem auto 0;
+    gap: 0.75rem;
+  }
+
+  #contact .contact-info-container {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  #contact .gmail-btn {
+    font-size: 15px;
+  }
+
+}
+
+/*
+   375px Below
+*/
+@media screen and (max-width: 375px) {
+
+  nav {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    max-width: 75%;
+  }
+
+  #profile .section__pic-container {
+    width: min(260px, 78vw);
+    height: min(260px, 78vw);
+    margin: 0 auto;
+  }
+
+  #profile {
+    gap: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    max-width: 280px;
+  }
+
+  .skill-level {
+    font-size: 0.68rem;
+  }
+
+  #skills .skill-percent {
+    font-size: 1.05rem;
+    font-weight: 800;
+  }
+
+  /* Gmail button font size (mobile) */
+  #contact .gmail-btn {
+    font-size: 14px;
+  }
+}
+
+/*
+   320px Below
+*/
+@media screen and (max-width: 320px) {
+
+  nav {
+    padding: 0 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  #profile .section__pic-container {
+    width: min(230px, 76vw);
+    height: min(230px, 76vw);
+    margin: 0 auto;
+  }
+
+  #profile {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    max-width: 260px;
+  }
+
+  #about {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .skill-level {
+    font-size: 0.65rem;
+  }
+
+  #skills .skill-percent {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  #contact .contact-info-container {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  #contact .contact-info-container img {
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+
+  #contact .gmail-btn {
+    font-size: 15px;
+  }
+}
