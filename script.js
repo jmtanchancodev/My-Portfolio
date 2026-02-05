@@ -1,8 +1,17 @@
 // Prevent scrollbar flash on refresh (loading lock)
 document.documentElement.classList.add("is-loading");
-window.addEventListener("load", () => {
+
+/** * UPDATED SCROLLBAR LOGIC:
+ * We remove the loading lock when the page is fully loaded,
+ * but we also add a 2.5-second failsafe for mobile users on slow networks.
+ */
+const removeLoadingLock = () => {
   document.documentElement.classList.remove("is-loading");
-});
+};
+
+window.addEventListener("load", removeLoadingLock);
+setTimeout(removeLoadingLock, 2500); // Failsafe: unlock scroll after 2.5s regardless of asset status
+
 
 // HAMBURGER MENU (with close anim)
 function toggleMenu() {

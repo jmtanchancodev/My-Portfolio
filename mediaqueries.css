@@ -181,6 +181,8 @@
   body {
     width: 100%;
     overflow-x: hidden;
+    overflow-y: visible !important;
+    height: auto;
   }
 
   :root {
@@ -193,8 +195,8 @@
   }
 
   body {
-    overscroll-behavior: none;
     padding-top: var(--nav-height);
+    position: relative;
   }
 
   #profile,
