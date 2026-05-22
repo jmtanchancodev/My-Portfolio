@@ -16,7 +16,7 @@
   }
 
   .about-details-container,
-  .expertise-education-wrapper {
+  .timeline-center-wrapper {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -119,7 +119,7 @@
   }
 
   #projects .article-container {
-    height: 260px !important;
+    height: auto !important;
   }
 }
 
@@ -296,9 +296,11 @@
     grid-template-columns: 1fr;
   }
 
-  #projects .article-container {
+  #projects .article-container,
+  #projects .placeholder-dark {
     aspect-ratio: 1 / 1;
     height: auto !important;
+    width: 100%;
   }
 
   .skill-oval {
@@ -395,6 +397,30 @@
   #contact .gmail-btn {
     font-size: 14px;
   }
+
+  /* Fix 9: Shrink subtitle on very small screens */
+  .section__text__p2 {
+    font-size: 1.35rem;
+  }
+
+  /* Scale down cert card top bar to prevent badge overflow */
+  .cert-card-top {
+    padding: 0.9rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .cert-logo-placeholder {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  .cert-badge {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.55rem;
+    letter-spacing: 0.02em;
+  }
 }
 
 /*
@@ -422,6 +448,11 @@
 
   .title {
     font-size: 1.6rem;
+  }
+
+  /* Fix 9: Further shrink subtitle */
+  .section__text__p2 {
+    font-size: 1.2rem;
   }
 
   .btn {
@@ -454,5 +485,209 @@
 
   #contact .gmail-btn {
     font-size: 15px;
+  }
+
+  /* Fix 5 & 12: Force date tag below title on tiny screens */
+  .card-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .card-date-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  /* Further shrink cert top bar at 320px */
+  .cert-card-top {
+    padding: 0.75rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .cert-logo-placeholder {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 7px;
+  }
+
+  .cert-badge {
+    font-size: 0.58rem;
+    padding: 0.2rem 0.45rem;
+    letter-spacing: 0.01em;
+  }
+}
+
+
+/* ══════════════════════════════════════════════
+   CAROUSEL RESPONSIVE
+══════════════════════════════════════════════ */
+
+/* Tablet: 2 slides visible */
+@media screen and (max-width: 1200px) {
+  .carousel-slide {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+
+  .carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile: 1 slide visible */
+@media screen and (max-width: 600px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+
+  .carousel-title {
+    font-size: 1.25rem;
+  }
+
+  .carousel-desc {
+    font-size: 0.88rem;
+  }
+
+  .cert-card {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .cert-company-inline {
+    display: none;
+  }
+
+  .cert-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cert-footer-right {
+    text-align: left;
+  }
+
+  .cert-cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recognition-section {
+    padding: 0 1rem;
+  }
+}
+
+
+/* ══════════════════════════════════════════════
+   CAROUSEL ARROWS — RESPONSIVE
+══════════════════════════════════════════════ */
+
+/* On tablet: arrows stay but tuck in tighter */
+@media screen and (max-width: 1200px) {
+
+
+
+}
+
+/* On mobile: smaller arrows, fully inside wrapper */
+@media screen and (max-width: 600px) {
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.82rem;
+  }
+
+  /* Timeline columns stack - reset fixed height on headings */
+  .info-column .sub-title-med {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Fix 7: On very narrow screens, shrink arrows to preserve slide content space */
+@media screen and (max-width: 360px) {
+  .carousel-arrow {
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+    flex-shrink: 0;
+  }
+
+  .carousel-nav {
+    gap: 0.35rem;
+  }
+}
+
+
+/* ══════════════════════════════════════════════
+   FIX 3: COMMON PHONE RANGE (390px – 430px)
+   Targets iPhone 14, Pixel 7, Galaxy S series
+══════════════════════════════════════════════ */
+@media screen and (min-width: 376px) and (max-width: 430px) {
+
+  .skill-oval {
+    width: 95px;
+    height: calc(125px + (var(--percent) * 0.45px));
+    border-radius: 47px;
+  }
+
+  .skill-icon {
+    height: 28px;
+  }
+
+  .skill-name {
+    font-size: 0.78rem;
+  }
+
+  .skill-level {
+    font-size: 0.68rem;
+  }
+
+  #skills .skill-percent {
+    font-size: 1.05rem;
+  }
+
+  .skills-row {
+    gap: 1rem;
+  }
+}
+
+
+/* ══════════════════════════════════════════════
+   FIX 11: LANDSCAPE MOBILE
+   Phones in landscape (e.g. iPhone SE, Pixel)
+══════════════════════════════════════════════ */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+
+  #profile {
+    min-height: auto;
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+  }
+
+  #profile .section__pic-container {
+    width: min(160px, 28vw);
+    height: min(160px, 28vw);
+  }
+
+  .section__text__p2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #profile .title {
+    font-size: 1.5rem;
+  }
+
+  nav,
+  #hamburger-nav {
+    height: 56px;
+    min-height: 56px;
+  }
+
+  :root {
+    --nav-height: 56px;
   }
 }
