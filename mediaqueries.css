@@ -691,3 +691,20 @@
     --nav-height: 56px;
   }
 }
+/* ── Modal nav arrows: tuck inside on small screens ── */
+@media screen and (max-width: 600px) {
+  .modal-nav-left  { left:  8px; }
+  .modal-nav-right { right: 8px; }
+
+  .modal-nav-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .modal-img-counter {
+    bottom: -28px;
+    font-size: 0.75rem;
+  }
+}

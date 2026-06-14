@@ -93,7 +93,7 @@ function toggleMenu() {
   }, 260);
 }
 
-// VIEW FULL IMAGE (modal overlay)
+// VIEW FULL IMAGE (modal overlay) — with left/right navigation
 function viewFullImage(button) {
   const projectImg = button
     .closest(".details-container")
@@ -101,12 +101,17 @@ function viewFullImage(button) {
 
   if (!projectImg) return;
 
-  const fullImageUrl =
-    projectImg.getAttribute("data-full-image") || projectImg.src;
-
   // Pause the carousel this button belongs to
   const carouselInner = button.closest("[data-carousel]");
   if (carouselInner) carouselInner.dispatchEvent(new CustomEvent("modal:open"));
+
+  // Collect all images in the same carousel
+  const allImgs = carouselInner
+    ? Array.from(carouselInner.querySelectorAll(".project-img"))
+    : [projectImg];
+
+  let currentIndex = allImgs.indexOf(projectImg);
+  if (currentIndex === -1) currentIndex = 0;
 
   // Create overlay
   const overlay = document.createElement("div");
@@ -123,7 +128,7 @@ function viewFullImage(button) {
 
   // Create full image
   const fullImage = document.createElement("img");
-  fullImage.src = fullImageUrl;
+  fullImage.src = allImgs[currentIndex].getAttribute("data-full-image") || allImgs[currentIndex].src;
   fullImageContainer.appendChild(fullImage);
 
   // Create close button
@@ -132,16 +137,59 @@ function viewFullImage(button) {
   closeButton.innerHTML = "&times;";
   fullImageContainer.appendChild(closeButton);
 
+  // Create nav arrows (only if multiple images)
+  if (allImgs.length > 1) {
+    const arrowLeft = document.createElement("button");
+    arrowLeft.classList.add("modal-nav-arrow", "modal-nav-left");
+    arrowLeft.innerHTML = "&#8249;";
+    arrowLeft.setAttribute("aria-label", "Previous image");
+    fullImageContainer.appendChild(arrowLeft);
+
+    const arrowRight = document.createElement("button");
+    arrowRight.classList.add("modal-nav-arrow", "modal-nav-right");
+    arrowRight.innerHTML = "&#8250;";
+    arrowRight.setAttribute("aria-label", "Next image");
+    fullImageContainer.appendChild(arrowRight);
+
+    // Image counter
+    const counter = document.createElement("span");
+    counter.classList.add("modal-img-counter");
+    counter.textContent = `${currentIndex + 1} / ${allImgs.length}`;
+    fullImageContainer.appendChild(counter);
+
+    const updateImage = (index) => {
+      currentIndex = ((index % allImgs.length) + allImgs.length) % allImgs.length;
+      fullImage.style.opacity = "0";
+      fullImage.style.transform = "scale(0.97)";
+      setTimeout(() => {
+        fullImage.src = allImgs[currentIndex].getAttribute("data-full-image") || allImgs[currentIndex].src;
+        fullImage.style.opacity = "1";
+        fullImage.style.transform = "scale(1)";
+        counter.textContent = `${currentIndex + 1} / ${allImgs.length}`;
+      }, 150);
+    };
+
+    fullImage.style.transition = "opacity 150ms ease, transform 150ms ease";
+
+    arrowLeft.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateImage(currentIndex - 1);
+    });
+
+    arrowRight.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateImage(currentIndex + 1);
+    });
+  }
+
   // Close functionality
   const close = () => {
-    // Play closing animations
     overlay.style.animation = "overlayFadeOut 220ms ease forwards";
     fullImageContainer.style.animation = "imageHide 200ms cubic-bezier(0.4, 0, 1, 1) forwards";
 
     setTimeout(() => {
       document.body.style.overflow = "";
       overlay.remove();
-      // Resume the carousel
       if (carouselInner) carouselInner.dispatchEvent(new CustomEvent("modal:close"));
     }, 220);
   };
@@ -150,13 +198,12 @@ function viewFullImage(button) {
     if (event.target === overlay || event.target === closeButton) close();
   });
 
-  document.addEventListener(
-    "keydown",
-    (e) => {
-      if (e.key === "Escape") close();
-    },
-    { once: true }
-  );
+  const keyHandler = (e) => {
+    if (e.key === "Escape") { close(); document.removeEventListener("keydown", keyHandler); }
+    if (e.key === "ArrowLeft"  && allImgs.length > 1) document.querySelector(".modal-nav-left")?.click();
+    if (e.key === "ArrowRight" && allImgs.length > 1) document.querySelector(".modal-nav-right")?.click();
+  };
+  document.addEventListener("keydown", keyHandler);
 }
 
 // Opens the certificate image in the same full-screen overlay modal

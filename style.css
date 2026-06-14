@@ -2219,6 +2219,61 @@ section#projects {
   box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
 }
 
+/* ── Modal image navigation arrows ─────────── */
+.modal-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 1.75rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+  transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modal-nav-left  { left:  -22px; }
+.modal-nav-right { right: -22px; }
+
+.modal-nav-arrow:hover {
+  background: #1E3A8A;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.5);
+}
+
+.modal-nav-arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.modal-img-counter {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
 /* ══════════════════════════════════════════════
    THEME TOGGLE BUTTON
 ══════════════════════════════════════════════ */
